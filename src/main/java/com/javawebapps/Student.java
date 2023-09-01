@@ -1,5 +1,7 @@
 package com.javawebapps;
 
+import java.util.List;
+
 public class Student {
     private String studentId;
     private String studentName;
@@ -7,6 +9,7 @@ public class Student {
 
     public Student(String studentId, String studentName, int marks) {
         this.studentId = studentId;
+        this.studentName = studentName;
         this.marks = marks;
     }
 
@@ -34,10 +37,16 @@ public class Student {
         this.marks = marks;
     }
 
-    public double getPassPercentage() {
-        // Hitung persentase kelulusan berdasarkan nilai siswa dan kriteria kelulusan
-        if (marks >= 40) {
-            return 100.00;
+    public double getPassPercentage(List<Student> students) {
+        int passedStudents = 0;
+        for (Student student : students) {
+            if (student.getMarks() >= 40) {
+                passedStudents++;
+            }
+        }
+        // Hitung persentase kelulusan
+        if (students.size() > 0) {
+            return ((double) passedStudents / students.size()) * 100.00;
         } else {
             return 0.00;
         }

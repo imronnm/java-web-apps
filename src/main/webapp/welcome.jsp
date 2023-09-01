@@ -19,11 +19,11 @@
         <th>Pass %</th>
     </tr>
     <%
-    List<Department> departmentList = (List<Department>) request.getSession().getAttribute("departmentList");
+        List<Department> departmentList = (List<Department>) request.getSession().getAttribute("departmentList");
         for (Department department : departmentList) {
-    List<Student> students = department.getStudents();
-        for (Student student : students) {
-        String passPercentage = String.format("%.2f%%", student.getPassPercentage());
+            List<Student> students = department.getStudents();
+            for (Student student : students) {
+                String passPercentage = String.format("%.2f%%", student.getPassPercentage(department.getStudents()));
     %>
     <tr>
         <td><%= department.getDepartmentName() %></td>
