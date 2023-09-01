@@ -6,9 +6,20 @@
     <script>
         $(document).ready(function () {
             $("#userId").blur(function () {
-                // Check if userId exists and show Student Name as a popup (for demonstration purposes)
+                // implementasi On click userId show Student Name as popup
                 var userId = $(this).val();
                 alert("Student Name: " + userId);
+            });
+            // Implementasi  "Do mandatory field validation with jQuery"
+            $("form").submit(function (event) {
+                var userId = $("#userId").val();
+                var password = $("#password").val();
+
+                // Periksa apakah "User ID" atau "Password" kosong
+                if (userId === "" || password === "") {
+                    alert("Isi semua bidang.");
+                    event.preventDefault();
+                }
             });
         });
     </script>
