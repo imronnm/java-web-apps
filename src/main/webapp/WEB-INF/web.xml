@@ -4,19 +4,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!-- Define a welcome file list (optional) -->
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
         <welcome-file>welcome.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Servlet Configuration -->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.javawebapps.LoginServlet</servlet-class>
     </servlet>
 
-    <!-- Servlet Mapping (use a more descriptive URL pattern) -->
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>

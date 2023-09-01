@@ -12,8 +12,8 @@ import java.util.List;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final String USERNAME = "admin";
-    private static final String PASSWORD = "password";
+    private static final String USERNAME = "imron";
+    private static final String PASSWORD = "787898";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -21,7 +21,6 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (USERNAME.equals(userId) && PASSWORD.equals(password)) {
-            // Create a list of departments and add students to each department
             List<Department> departmentList = getHardcodedDepartmentData();
             request.getSession().setAttribute("departmentList", departmentList);
             request.getRequestDispatcher("welcome.jsp").forward(request, response);
@@ -31,7 +30,6 @@ public class LoginServlet extends HttpServlet {
     }
 
     private List<Department> getHardcodedDepartmentData() {
-        // Create and return a list of hardcoded department data with students
         List<Department> departmentList = new ArrayList<>();
 
         Department department1 = new Department("Dep 1");
@@ -49,8 +47,7 @@ public class LoginServlet extends HttpServlet {
         department3.addStudent(new Student("S6",  "Dep 3", 32));
         department3.addStudent(new Student("S7",  "Dep 3", 70));
         department3.addStudent(new Student("S8",  "Dep 3", 20));
-
-        // Add departments to the list
+        
         departmentList.add(department1);
         departmentList.add(department2);
         departmentList.add(department3);

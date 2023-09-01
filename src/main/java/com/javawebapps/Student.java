@@ -7,7 +7,6 @@ public class Student {
 
     public Student(String studentId, String studentName, int marks) {
         this.studentId = studentId;
-        this.studentName = studentName;
         this.marks = marks;
     }
 

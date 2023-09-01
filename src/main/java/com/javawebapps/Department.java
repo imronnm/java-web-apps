@@ -6,7 +6,7 @@ import java.util.List;
 public class Department {
     private String departmentName;
     private List<Student> students;
-    private int totalPassedStudents; // Tambahkan atribut ini
+    private int totalPassedStudents;
 
     public Department(String departmentName) {
         this.departmentName = departmentName;
